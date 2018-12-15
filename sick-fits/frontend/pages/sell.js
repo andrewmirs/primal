@@ -4,7 +4,7 @@ const Sell = props => (
     <div>
         <p>Sell</p>
         <Link href="/">
-            <a>Home!</a>
+            <a>Home!!</a>
         </Link>
     </div>
 )
