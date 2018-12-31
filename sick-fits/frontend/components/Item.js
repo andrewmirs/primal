@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Link from 'next/link';
+import DeleteItem from './DeleteItem';
 import PropTypes from 'prop-types';
 import ItemStyles from './styles/ItemStyles';
 import PriceTag from './styles/PriceTag';
@@ -36,7 +37,7 @@ class Item extends Component {
                         <a>Edit ✏️</a>
                     </Link>
                     <button>Add To Cart</button>
-                    <button>Delete</button>
+                    <DeleteItem id={item.id}>Delete Item</DeleteItem>
                 </div>
             </ItemStyles>
         );
