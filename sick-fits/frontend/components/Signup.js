@@ -18,8 +18,8 @@ class Signup extends Component {
 
     state = {
         name: '',
+        email: '',
         password: '',
-        email: ''
     }
 
     saveToState = (event) => {
