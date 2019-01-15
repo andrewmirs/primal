@@ -204,6 +204,31 @@ const Mutations = {
             },
         }, info );
     },
+
+    async addToCart( parent, args, ctx, info ) {
+        // 1. Make sure they're logged in
+        const { userId } = ctx.request;
+        if(!userId) {
+            throw new Error('Sorry, you must be signed in!')
+        }
+        // 2. Query the users current cart
+        const  [existingCartItem] = ctx.db.query.cartItems({
+            user: { id: userId },
+            item: { id: args.id },
+        });
+        // 3. Check if that item is already in their cart and increment
+        if (existingCartItem) {
+            console.log('This item is already in their cart');
+            return ctx.db.mutation.updateCartItem({
+                where: { id: existingCartItem },
+                data: { quantity: existingCartItem.quantity + 1 },
+            });
+        } 
+        // 4. If its not, create a fresh CartItem for that user
+        return ctx.db.mutation.createCartItem({
+            
+        })
+    }
 };
 
 module.exports = Mutations;
