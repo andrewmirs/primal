@@ -42,7 +42,7 @@ const Cart = () => {
                                 {me.cart.map(cartItem => <CartItem key={cartItem.id} cartItem={cartItem} />)}
                             </ul> 
                             <footer>
-                                <p>{formatMoney(calcTotalPrice(me.cart))}</p>
+                                <p>{formatMoney( calcTotalPrice(me.cart) )}</p>
                                 <SickButton>Checkout</SickButton>
                             </footer>
                         </CartStyles>
