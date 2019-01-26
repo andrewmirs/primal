@@ -19,7 +19,7 @@ const Query = {
     async users( parent, args, ctx, info ) {
         // 1. Check if they are logged in
             if (!ctx.request.userId) {
-                throw new Error('You must be logged in!');
+                throw new Error('You must be signed in!');
             }
 
         // 2. Check if the user has the permissions to query all the users
@@ -32,7 +32,7 @@ const Query = {
     async order( parent, args, ctx, info ) {
         // 1. Make sure they are logged in
             if (!ctx.request.userId) {
-                throw new Error('You are not logged in!');
+                throw new Error('You are not signed in!');
             }
 
         // 2. Query the current order
@@ -49,7 +49,19 @@ const Query = {
 
         // 4. Return the order
             return order;
-    }
+    },
+
+    async orders( parent, args, ctx, info ) {
+        const { userId } = ctx.request;
+        if(!userId) {
+            throw new Error('You must be signed in!');
+        }
+        return ctx.db.query.orders({
+            where: {
+                user: { id: userId }
+            }
+        }, info)
+    },
 
 };
 

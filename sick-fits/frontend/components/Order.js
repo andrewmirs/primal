@@ -70,7 +70,7 @@ class Order extends Component {
                             </p>
                             <p>
                                 <span>Item Count:</span>
-                                <span>{order.items.length}</span>
+                                <span>{order.items.reduce((tally, orderItem) => tally + orderItem.quantity, 0)}</span>
                             </p>
                             <OrderItems items={order.items} />
                         </OrderStyles>
