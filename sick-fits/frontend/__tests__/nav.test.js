@@ -74,7 +74,6 @@ describe('<Nav/>', () => {
         wrapper.update();
         const nav = wrapper.find('[data-test="nav"]');
         const count = nav.find('div.count');
-        console.log(count.debug());
         expect(toJSON(count)).toMatchSnapshot();
     });
 });
