@@ -29,7 +29,14 @@ const Mutations = {
     },
 
     updateItem( parent, args, ctx, info ) {
-        // First tsake a copy of the updates
+        // Check if they have the permissions to update
+        const hasPermissions = ctx.request.user.permissions.some(
+            permission => ['ADMIN', 'ITEMUPDATE'].includes(permission)
+        );
+        if ( !hasPermissions ) {
+            throw new Error('You do not have permission to do this!');
+        }
+        // First take a copy of the updates
         const updates = { ...args };
 
         // Remove the ID from the updates
