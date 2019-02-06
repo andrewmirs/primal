@@ -52,7 +52,6 @@ class Item extends Component {
 
     render() {
         const { item } = this.props;
-        console.log(item);
         return (
             <User>
                 {({ data: { me } }) => (
