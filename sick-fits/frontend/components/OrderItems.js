@@ -20,7 +20,6 @@ const OrderSingleItemStyle = styled.div`
 `;
 
 const OrderItems = (props) => {
-    console.log("Order Items props:", props);
     return (
         <OrderSingleItemStyle>
             <div className="items">
