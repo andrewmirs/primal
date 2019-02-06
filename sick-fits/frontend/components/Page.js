@@ -5,7 +5,7 @@ import Meta from './Meta';
 
 
 const theme = {
-    red: '#FF0000',
+    red: '#5f023a',
     black: '#393939',
     grey: '#3A3A3A',
     lightgrey: '#E1E1E1',
@@ -28,8 +28,7 @@ const Inner = styled.div`
 injectGlobal`
     @font-face {
         font-family: 'radnika_next';
-        src: url('/static/radnikanext-medium-webfont.woff2');
-        format('woff2');
+        src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');
         font-weight: normal;
         font-style: normal;
     }
@@ -50,6 +49,14 @@ injectGlobal`
     a {
         text-decoration: none;
         color: ${theme.black};
+    }
+    #nprogress .bar {
+        background: #5f023a;
+    }
+
+    #nprogress .spinner-icon {
+        border-top-color: #5f023a;
+        border-left-color: #5f023a;
     }
 `;
 

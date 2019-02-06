@@ -34,9 +34,6 @@ class Nav extends Component {
                     <Link href="/orders">
                         <a>Orders</a>
                     </Link>
-                    <Link href="/me">
-                        <a>Account</a>
-                    </Link>
                     <Signout />
                     <Mutation mutation={TOGGLE_CART_MUTATION}>
                         {(toggleCart) => (
@@ -53,9 +50,6 @@ class Nav extends Component {
                 <Fragment>
                     <Link href="/orders">
                         <a>Orders</a>
-                    </Link>
-                    <Link href="/me">
-                        <a>Account</a>
                     </Link>
                     <Signout />
                     <Mutation mutation={TOGGLE_CART_MUTATION}>
