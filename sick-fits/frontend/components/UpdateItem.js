@@ -51,15 +51,12 @@ class UpdateItem extends Component {
 
     updateItem = async (event, updateItemMutation) => {
         event.preventDefault();
-        console.log('Updating item!');
-        console.log(this.state);
         const res = await updateItemMutation({
             variables: {
                 id: this.props.id,
                 ...this.state,
             }
         });
-        console.log('Updated!')
     }
     
     render(){
@@ -77,7 +74,15 @@ class UpdateItem extends Component {
                         <Mutation mutation={UPDATE_ITEM_MUTATION} variables={this.state}>
                             {(updateItem, { loading, error }) => (
 
-                                <Form onSubmit={event => this.updateItem(event, updateItem)}>
+                                <Form 
+                                    onSubmit={ async (event) => {
+                                        await this.updateItem(event, updateItem);
+                                        Router.push({
+                                            pathname: '/items',
+                                        });
+                                    }}
+                                    
+                                >
                                     <Error error={error} /> 
                                     <h2>Sell an Item.</h2>
                                     <fieldset disabled={loading} aria-busy={loading}>

@@ -29,11 +29,11 @@ const CREATE_ITEM_MUTATION = gql`
 class CreateItem extends Component {
     
     state = {
-        title: 'Irvings 3si',
-        description: 'dope shoes',
-        image: 'ki.jpg',
-        largeImage: 'large-ki.jpg',
-        price: 300,
+        title: '',
+        description: '',
+        image: '',
+        largeImage: '',
+        price: 0,
     };
 
     handleChange = (event) => {
@@ -44,7 +44,6 @@ class CreateItem extends Component {
     };
 
     uploadFile = async (event) => {
-        console.log('Uploading file...');
         const files = event.target.files;
         const data = new FormData();
         data.append('file', files[0]);
@@ -69,18 +68,21 @@ class CreateItem extends Component {
             <Mutation mutation={CREATE_ITEM_MUTATION} variables={this.state}>
                 {(createItem, { loading, error }) => (
 
-                    <Form onSubmit={async (event) => {
-                        // Stop the form from submitting
-                        event.preventDefault();
-                        // Call the muation
-                        const res = await createItem();
-                        // Change them to the single item page
-                        console.log(res);
-                        Router.push({
-                            pathname: '/item',
-                            query: { id: res.data.createItem.id }
-                        })
-                    }}>
+                    <Form
+                        data-test="form" 
+                        onSubmit={async (event) => {
+                            // Stop the form from submitting
+                            event.preventDefault();
+                            // Call the muation
+                            const res = await createItem();
+                            // Change them to the single item page
+                            console.log(res);
+                            Router.push({
+                                pathname: '/item',
+                                query: { id: res.data.createItem.id }
+                            })
+                        }
+                    }>
                         <Error error={error} /> 
                         <h2>Sell an Item.</h2>
                         <fieldset disabled={loading} aria-busy={loading}>
