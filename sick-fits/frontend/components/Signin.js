@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
+import Router from 'next/router';
 import gql from 'graphql-tag';
 import Error from './ErrorMessage';
 import Form from './styles/Form';
@@ -37,11 +38,17 @@ class Signin extends Component {
                 refetchQueries={[{ query: CURRENT_USER_QUERY }]}
             >
                 {(signin, { error, loading }) => (
-                    <Form method="post" onSubmit={async (event) => {
-                        event.preventDefault();
-                        await signin();
-                        this.setState({ name: '', email: '', password: '' })
-                    }}>
+                    <Form 
+                        method="post" 
+                        onSubmit={async (event) => {
+                            event.preventDefault();
+                            await signin();
+                            this.setState({ name: '', email: '', password: '' });
+                            Router.push({
+                                pathname: '/items',
+                            });
+                        }}
+                    >
                         <fieldset disabled={loading} aria-busy={loading}>
                             <h2>Sign Into Your Account</h2>
                             <Error error={error} />

@@ -58,6 +58,10 @@ injectGlobal`
         border-top-color: #5f023a;
         border-left-color: #5f023a;
     }
+
+    #nprogress .peg {
+        box-shadow: 0 0 10px #5f023a, 0 0 5px #5f023a;
+    }
 `;
 
 class Page extends Component {
