@@ -4,23 +4,42 @@ import gql from 'graphql-tag';
 import { Query } from 'react-apollo';
 import Error from './ErrorMessage';
 import styled from 'styled-components';
+import formatMoney from '../lib/formatMoney';
+
 
 const SingleItemStyles = styled.div`
-    max-width: 1200px;
-    margin: 2rem auto;
+    max-width: 800px;
+    margin: 1rem auto;
     box-shadow: ${props => props.theme.bs};
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-auto-flow: column;
-    min-height: 800px;
+    /* display: grid; */
+    /* grid-auto-columns: 1fr;
+    grid-auto-flow: column; */
+    min-height: 650px;
     img {
         width: 100%;
-        height: 100%;
+        height: 50vh;
         object-fit: contain;
     }
     .details {
-        margin: 3rem;
+        /* margin: 3rem; */
         font-size: 2rem;
+        vertical-align: middle;
+        text-align: center;
+    }
+`;
+
+const Price = styled.h3`
+    font-size: 2rem;
+    margin-left: 1rem;
+    position: relative;
+    transform: skew(-7deg);
+
+    .price {
+        padding: 0.5rem 1rem;
+        background: ${props => props.theme.red};
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
     }
 `;
 
@@ -29,6 +48,7 @@ const SINGLE_ITEM_QUERY = gql `
         item(where: { id: $id }) {
             id
             title
+            price
             description
             largeImage
         }
@@ -48,18 +68,19 @@ class SingleItem extends Component {
                     if (error) return <Error error={error} />;
                     if (loading) return <p>Loading...</p>;
                     if(!data.item) return <p>No Item Found for {this.props.id}</p>;
-
+                    
                     const item = data.item;
-
+     
                     return (
                         <SingleItemStyles>
                             <Head>
-                                <title>Sick Fits | {item.title}</title>
+                                <title>Primal Apparel | {item.title}</title>
                             </Head>
                             <img src={item.largeImage} alt={item.title} />
                             <div className="details">
                                 <h2>Viewing {item.title}</h2>
-                                <p>{item.description}</p>
+                                <p>"{item.description}"</p>
+                                <Price><span className="price">{formatMoney(item.price)}</span></Price>
                             </div>
                         </SingleItemStyles>
                     );
