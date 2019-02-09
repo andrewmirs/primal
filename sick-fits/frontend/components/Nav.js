@@ -20,10 +20,39 @@ class Nav extends Component {
                 </Link>
             );
         }
-    
-        const hasPermissions = me.permissions.some(
-            permission => ['ADMIN', 'ITEMUPDATE', 'ITEMDELETE', 'ITEMCREATE'].includes(permission)
+        
+        const hasAdminPermissions = me.permissions.some(
+            permission => ['ADMIN'].includes(permission)
         );
+
+        const hasPermissions = me.permissions.some(
+            permission => ['ITEMUPDATE', 'ITEMDELETE', 'ITEMCREATE'].includes(permission)
+        );
+
+        if(hasAdminPermissions){
+            return (
+                <Fragment>
+                    <Link href="/sell">
+                        <a>Sell</a>
+                    </Link>
+                    <Link href="/orders">
+                        <a>Orders</a>
+                    </Link>
+                    <Link href="/permissions">
+                        <a>Admin</a>
+                    </Link>
+                    <Signout />
+                    <Mutation mutation={TOGGLE_CART_MUTATION}>
+                        {(toggleCart) => (
+                            <button onClick={toggleCart}>
+                                My Cart
+                                <CartCount count={me.cart.reduce((tally, cartItem) => tally + cartItem.quantity, 0)} />
+                            </button>
+                        )}
+                    </Mutation>
+                </Fragment> 
+            );
+        }
     
         if(hasPermissions){
             return (

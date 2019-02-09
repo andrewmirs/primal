@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Cart from './Cart';
 import Nav from './Nav';
 import Search from './Search';
+import Primal from '../static/images/primallogo.png';
 
 Router.onRouteChangeStart = () => {
     NProgress.start();
@@ -17,7 +18,7 @@ Router.onRouteChangeError = () => {
 };
 
 const Logo = styled.h1`
-    font-size: 4rem;
+    font-size: 2rem;
     margin-left: 2rem;
     position: relative;
     z-index: 2;
@@ -59,7 +60,7 @@ const Header = () => (
         <div className="bar">
             <Logo>
                 <Link href="/">
-                    <a>Primal Wear</a>
+                    <img src={Primal} alt="Primal Apparel" />
                 </Link>
             </Logo>
             <Nav /> 
