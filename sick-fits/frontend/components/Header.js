@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Cart from './Cart';
 import Nav from './Nav';
 import Search from './Search';
-import Primal from '../static/images/primallogo.png';
+import Primal from '../static/images/primallogo2.png';
 
 Router.onRouteChangeStart = () => {
     NProgress.start();
@@ -20,19 +20,15 @@ Router.onRouteChangeError = () => {
 const Logo = styled.h1`
     font-size: 2rem;
     margin-left: 2rem;
+    margin-right: 1rem;
     position: relative;
     z-index: 2;
     transform: skew(-7deg);
-    a {
-        padding: 0.5rem 1rem;
-        background: ${props => props.theme.red};
-        color: white;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
+    text-align: center;
     @media (max-width: 1300px){
-        margin: 0;
+        margin-top: 1rem;
         text-align: center;
+        font-size: 1rem;
     }
 `;
 
