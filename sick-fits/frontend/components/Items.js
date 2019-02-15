@@ -29,6 +29,14 @@ const ItemsList = styled.div`
     grid-gap: 60px;
     max-width: ${props => props.theme.maxWidth};
     margin: 0 auto;
+
+    /* iPhone X Media Query */
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+        grid-template-columns: 1fr;
+    }
 `;
 
 

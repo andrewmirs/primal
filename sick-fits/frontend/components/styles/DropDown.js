@@ -42,6 +42,16 @@ const SearchStyles = styled.div`
       animation: ${glow} 0.5s ease-in-out infinite alternate;
     }
   }
+
+  /* iPhoneX Media Query */
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+      input {
+        font-size: 1rem;
+      }
+    }
 `;
 
 export { DropDown, DropDownItem, SearchStyles };

@@ -42,6 +42,15 @@ const CartStyles = styled.div`
     list-style: none;
     overflow: scroll;
   }
+
+  /* iPhoneX Media Query */
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+      height: 100%;
+      min-width: 100%;
+    }
 `;
 
 export default CartStyles;
