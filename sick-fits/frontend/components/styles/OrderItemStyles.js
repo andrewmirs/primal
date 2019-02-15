@@ -38,6 +38,13 @@ const OrderItemStyles = styled.li`
       display: block;
       margin-bottom: 1rem;
     }
+
+    /* iPhone5 Media Query */
+    @media only screen 
+    and (max-device-width : 812px)
+    and (orientation: portrait) {
+        font-size: 1rem;
+    }
   }
 `;
 
