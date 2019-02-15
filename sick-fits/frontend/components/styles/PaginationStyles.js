@@ -25,12 +25,25 @@ const PaginationStyles = styled.div`
 
   /* iPhone X Media Query */
   @media only screen 
-    and (min-device-width : 375px) 
     and (max-device-width : 812px) {
       grid-template-columns: repeat(4, 82px);
       font-size: 1rem;
       p {
         padding: 15px 25px;
+      }
+    }
+
+  /* iPhone 5 Media Query */
+  @media only screen 
+    and (max-device-width : 320px)
+    and (orientation : portrait) {
+      grid-template-columns: repeat(4, 70px);
+      font-size: 1rem;
+      p {
+        padding: 15px 17px;
+      }
+      a {
+        padding: 15px 20px;
       }
     }
 `;

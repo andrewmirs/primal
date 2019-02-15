@@ -45,14 +45,12 @@ const CartStyles = styled.div`
 
   /* iPhoneX Media Query */
   @media only screen 
-    and (min-device-width : 375px) 
     and (max-device-width : 812px)
     and (orientation: portrait) {
       height: 100%;
       min-width: 100%;
     }
     @media only screen 
-    and (min-device-width : 375px) 
     and (max-device-width : 812px)
     and (orientation: landscape) {
       h3 {
@@ -60,6 +58,33 @@ const CartStyles = styled.div`
       }
       p {
         font-size: 1.2rem;
+      }
+      footer > p {
+        font-size: 2rem;
+      }
+      button.fBtWCZ {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* iPhone 5 Media Query */
+    @media only screen 
+    and (max-device-width : 568px)
+    and (orientation : landscape) {
+      header {
+        margin-bottom: 1rem;
+        padding-bottom: 0;
+      }
+      footer {
+        margin-top: 1rem;
+        padding-top: 0;
+      }
+    }
+    @media only screen 
+    and (max-device-width : 320px)
+    and (orientation : portrait) {
+      h3 {
+        font-size: 2rem;
       }
       footer > p {
         font-size: 2rem;

@@ -43,9 +43,10 @@ const Logo = styled.h1`
 
     /* iPad Media Query */
     @media only screen 
-    and (min-device-width : 768px) 
-    and (max-device-width : 1024px) 
-    and (orientation : portrait) { 
+    and (max-device-width : 768px) 
+    and (max-device-height : 1024px)
+    and (orientation : portrait)
+    and (-webkit-min-device-pixel-ratio: 2) { 
         img {
             height: 100px;
         }
@@ -61,8 +62,8 @@ const Logo = styled.h1`
     }
 
     /* iPhone X Media Query */
-    @media only screen 
-    and (min-device-width : 375px) 
+    @media only screen  
+    and (max-device-height : 812px)
     and (max-device-width : 812px) {
         img {
             height: 65px;

@@ -35,8 +35,8 @@ const OrderStyles = styled.div`
     }
   }
 
+  /* iPhone X Media Query */
   @media only screen 
-    and (min-device-width : 375px) 
     and (max-device-width : 812px)
     and (orientation: portrait) {
         p {

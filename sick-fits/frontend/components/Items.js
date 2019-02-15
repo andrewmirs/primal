@@ -32,13 +32,11 @@ const ItemsList = styled.div`
 
     /* iPhone X Media Query */
     @media only screen 
-    and (min-device-width : 375px) 
     and (max-device-width : 812px)
     and (orientation: portrait) {
         grid-template-columns: 1fr;
     }
     @media only screen 
-    and (min-device-width : 375px) 
     and (max-device-width : 812px)
     and (orientation: landscape) {
         grid-template-columns: 1fr 1fr;

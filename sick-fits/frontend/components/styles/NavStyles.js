@@ -46,7 +46,6 @@ const NavStyles = styled.ul`
       left: 50%;
       margin-top: 2rem;
       @media only screen 
-      and (min-device-width : 375px) 
       and (max-device-width : 812px)
       and (orientation: portrait) {
         height: 0;
@@ -63,14 +62,12 @@ const NavStyles = styled.ul`
     }
     /* iPhoneX Media Query */
     @media only screen 
-    and (min-device-width : 375px) 
     and (max-device-width : 812px)
     and (orientation: portrait) {
       width: auto;
     }
     /* iPhone 6/7/8 Media Query */
     @media only screen 
-    and (min-device-width : 375px) 
     and (max-device-width : 667px) 
     and (orientation : landscape) {
       width: auto;
@@ -93,7 +90,6 @@ const NavStyles = styled.ul`
 
   /* iPhone X Media Query */
   @media only screen 
-    and (min-device-width : 375px) 
     and (max-device-width : 812px)
     and (orientation: portrait) {
         a {
@@ -105,7 +101,6 @@ const NavStyles = styled.ul`
         }
     }
   @media only screen 
-  and (min-device-width : 375px) 
   and (max-device-width : 812px)
   and (orientation: landscape) {
       a {
@@ -118,7 +113,6 @@ const NavStyles = styled.ul`
 
   /* iPhone 6/7/8 Media Query */
   @media only screen 
-  and (min-device-width : 375px) 
   and (max-device-width : 667px) 
   and (orientation : landscape) {
     a {
