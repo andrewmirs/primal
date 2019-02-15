@@ -30,6 +30,45 @@ const Logo = styled.h1`
         text-align: center;
         font-size: 1rem;
     }
+    /* iPad Pro Media Query */
+    @media only screen
+    and (min-device-width : 1024px) 
+    and (max-device-width : 1366px) 
+    and (orientation : landscape) { 
+        img {
+            height: 100px;
+            margin: 20px 20px 0 20px;
+        }
+    }
+
+    /* iPad Media Query */
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : portrait) { 
+        img {
+            height: 100px;
+        }
+    }
+    @media only screen 
+    and (min-device-width : 768px) 
+    and (max-device-width : 1024px) 
+    and (orientation : landscape) { 
+        img {
+            height: 100px;
+            margin: 0;
+        }
+    }
+
+    /* iPhone X Media Query */
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+        img {
+            height: 65px;
+        }
+    }
 `;
 
 const StyledHeader = styled.header`

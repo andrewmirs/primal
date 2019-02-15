@@ -63,6 +63,27 @@ const NavStyles = styled.ul`
     justify-content: center;
     font-size: 1.5rem;
   }
+
+  /* iPad Media Query */
+  @media only screen 
+  and (max-device-width : 768px) 
+  and (orientation : portrait) {
+    font-size: 1rem;
+  }
+
+  /* iPhone X Media Query */
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3) {
+        a {
+          font-size: 8px;
+          padding: 20px 10px;
+        }
+        button {
+          font-size: 8px;
+        }
+    }
 `;
 
 export default NavStyles;
