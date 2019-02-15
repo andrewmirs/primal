@@ -49,7 +49,7 @@ const SearchStyles = styled.div`
     and (max-device-width : 812px)
     and (-webkit-device-pixel-ratio : 3) {
       input {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
 `;

@@ -45,6 +45,13 @@ const NavStyles = styled.ul`
       transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
       left: 50%;
       margin-top: 2rem;
+      @media only screen 
+      and (min-device-width : 375px) 
+      and (max-device-width : 812px)
+      and (-webkit-device-pixel-ratio : 3)
+      and (orientation: portrait) {
+        height: 0;
+      }
     }
     &:hover,
     &:focus {
@@ -54,6 +61,13 @@ const NavStyles = styled.ul`
       }
     @media (max-width: 700px) {
         width: calc(100% - 10px);
+    }
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3)
+    and (orientation: portrait) {
+      width: auto;
     }
     }
   }
@@ -75,10 +89,23 @@ const NavStyles = styled.ul`
   @media only screen 
     and (min-device-width : 375px) 
     and (max-device-width : 812px)
-    and (-webkit-device-pixel-ratio : 3) {
+    and (-webkit-device-pixel-ratio : 3)
+    and (orientation: portrait) {
         a {
           font-size: 8px;
           padding: 20px 10px;
+        }
+        button {
+          font-size: 8px;
+        }
+    }
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3)
+    and (orientation: landscape) {
+        a {
+          font-size: 8px;
         }
         button {
           font-size: 8px;

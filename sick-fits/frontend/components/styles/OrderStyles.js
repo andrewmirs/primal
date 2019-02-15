@@ -6,7 +6,7 @@ const OrderStyles = styled.div`
   border: 1px solid ${props => props.theme.offWhite};
   box-shadow: ${props => props.theme.bs};
   padding: 2rem;
-  border-top: 10px solid red;
+  border-top: 10px solid #5f023a;
   & > p {
     display: grid;
     grid-template-columns: 1fr 5fr;
@@ -34,5 +34,18 @@ const OrderStyles = styled.div`
       object-fit: cover;
     }
   }
+
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3)
+    and (orientation: portrait) {
+        p {
+          font-size: 1rem;
+        }
+        .gwWUxe .order-item {
+          grid-template-columns: 100px 1fr;
+        }
+    }
 `;
 export default OrderStyles;
