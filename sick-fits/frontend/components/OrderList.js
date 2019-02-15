@@ -30,6 +30,15 @@ const OrderUl = styled.ul`
     display: grid;
     grid-gap: 4rem;
     grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+     /* iPhone X Media Query */
+  @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 812px)
+    and (-webkit-device-pixel-ratio : 3)
+    and (orientation: portrait) {
+        grid-template-columns: repeat(auto-fit, minmax(60%, 1fr));
+        padding: 0;
+    }
 `;
 
 class OrderList extends Component {
