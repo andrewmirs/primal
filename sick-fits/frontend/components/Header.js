@@ -63,8 +63,7 @@ const Logo = styled.h1`
     /* iPhone X Media Query */
     @media only screen 
     and (min-device-width : 375px) 
-    and (max-device-width : 812px)
-    and (-webkit-device-pixel-ratio : 3) {
+    and (max-device-width : 812px) {
         img {
             height: 65px;
         }

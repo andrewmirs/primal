@@ -48,7 +48,6 @@ const NavStyles = styled.ul`
       @media only screen 
       and (min-device-width : 375px) 
       and (max-device-width : 812px)
-      and (-webkit-device-pixel-ratio : 3)
       and (orientation: portrait) {
         height: 0;
       }
@@ -62,11 +61,18 @@ const NavStyles = styled.ul`
     @media (max-width: 700px) {
         width: calc(100% - 10px);
     }
+    /* iPhoneX Media Query */
     @media only screen 
     and (min-device-width : 375px) 
     and (max-device-width : 812px)
-    and (-webkit-device-pixel-ratio : 3)
     and (orientation: portrait) {
+      width: auto;
+    }
+    /* iPhone 6/7/8 Media Query */
+    @media only screen 
+    and (min-device-width : 375px) 
+    and (max-device-width : 667px) 
+    and (orientation : landscape) {
       width: auto;
     }
     }
@@ -89,7 +95,6 @@ const NavStyles = styled.ul`
   @media only screen 
     and (min-device-width : 375px) 
     and (max-device-width : 812px)
-    and (-webkit-device-pixel-ratio : 3)
     and (orientation: portrait) {
         a {
           font-size: 8px;
@@ -99,18 +104,30 @@ const NavStyles = styled.ul`
           font-size: 8px;
         }
     }
-    @media only screen 
-    and (min-device-width : 375px) 
-    and (max-device-width : 812px)
-    and (-webkit-device-pixel-ratio : 3)
-    and (orientation: landscape) {
-        a {
-          font-size: 8px;
-        }
-        button {
-          font-size: 8px;
-        }
-    }
+  @media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 812px)
+  and (orientation: landscape) {
+      a {
+        font-size: 8px;
+      }
+      button {
+        font-size: 8px;
+      }
+  }
+
+  /* iPhone 6/7/8 Media Query */
+  @media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 667px) 
+  and (orientation : landscape) {
+    a {
+        padding: 1rem 3rem;
+      }
+      button {
+        padding: 1rem 3rem;
+      }
+  }
 `;
 
 export default NavStyles;

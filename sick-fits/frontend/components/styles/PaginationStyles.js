@@ -26,8 +26,7 @@ const PaginationStyles = styled.div`
   /* iPhone X Media Query */
   @media only screen 
     and (min-device-width : 375px) 
-    and (max-device-width : 812px)
-    and (-webkit-device-pixel-ratio : 3) {
+    and (max-device-width : 812px) {
       grid-template-columns: repeat(4, 82px);
       font-size: 1rem;
       p {
