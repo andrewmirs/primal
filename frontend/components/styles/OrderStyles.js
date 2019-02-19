@@ -46,5 +46,17 @@ const OrderStyles = styled.div`
           grid-template-columns: 100px 1fr;
         }
     }
+
+  /* iPhone 5 Media Query */
+  @media only screen 
+    and (max-device-width : 320px)
+    and (orientation: portrait) {
+        p span {
+          font-size: 0.9rem;
+        }
+        .gwWUxe .order-item {
+          grid-template-columns: 100px 1fr;
+        }
+    }
 `;
 export default OrderStyles;
