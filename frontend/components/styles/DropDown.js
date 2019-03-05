@@ -5,6 +5,7 @@ const DropDown = styled.div`
   width: 100%;
   z-index: 2;
   border: 1px solid ${props => props.theme.lightgrey};
+  cursor: pointer;
 `;
 
 const DropDownItem = styled.div`
