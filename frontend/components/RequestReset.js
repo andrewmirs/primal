@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
+import styled from 'styled-components';
 import Error from './ErrorMessage';
 import Form from './styles/Form';
+
+const StyledButton = styled.button`
+    cursor: pointer;
+`;
 
 const REQUEST_RESET_MUTATION = gql`
     mutation REQUEST_RESET_MUTATION($email: String!) {
@@ -55,7 +60,7 @@ class RequestReset extends Component {
                                 />
                             </label>
 
-                            <button type="submit">Request Reset!</button>
+                            <StyledButton type="submit">Request Reset!</StyledButton>
                         </fieldset>
                     </Form>
                 )}

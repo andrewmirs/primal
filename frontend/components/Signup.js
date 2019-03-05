@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import { Mutation } from 'react-apollo';
 import Router from 'next/router';
 import gql from 'graphql-tag';
+import styled from 'styled-components';
 import Error from './ErrorMessage';
 import Form from './styles/Form';
 import { CURRENT_USER_QUERY } from './User';
+
+const StyledButton = styled.button`
+    cursor: pointer;
+`;
 
 const SIGNUP_MUTATION = gql`
     mutation SIGNUP_MUTATION($email: String!, $name: String!, $password: String!) {
@@ -83,7 +88,7 @@ class Signup extends Component {
                                 />
                             </label>
 
-                            <button type="submit">Sign Up!</button>
+                            <StyledButton type="submit">Sign Up!</StyledButton>
                         </fieldset>
                     </Form>
                 )
